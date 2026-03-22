@@ -1,6 +1,3 @@
-server:
-  port: 8080
-
 spring:
   application:
     name: api-gateway
@@ -15,6 +12,21 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/v1/users/**
+
+        - id: operator-service
+          uri: lb://operator-service
+          predicates:
+            - Path=/api/v1/operators/**
+
+        - id: recharge-service
+          uri: lb://recharge-service
+          predicates:
+            - Path=/api/v1/recharges/**
+
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+            - Path=/api/v1/payments/**
 
 eureka:
   client:
