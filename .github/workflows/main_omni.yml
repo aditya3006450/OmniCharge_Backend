@@ -34,7 +34,6 @@ jobs:
           mvn -f PaymentService/pom.xml clean package -DskipTests -B
           mvn -f RechargeService/pom.xml clean package -DskipTests -B
           mvn -f OperatoraService/pom.xml clean package -DskipTests -B
-          mvn -f OmniCharge/pom.xml clean package -DskipTests -B
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2

@@ -17,7 +17,6 @@ COPY NotificationService/target/*.jar /app/services/
 COPY PaymentService/target/*.jar /app/services/
 COPY RechargeService/target/*.jar /app/services/
 COPY OperatoraService/target/*.jar /app/services/
-COPY OmniCharge/target/*.jar /app/services/
 
 COPY startup.sh /app/
 COPY supervisord.conf /app/supervisor/
