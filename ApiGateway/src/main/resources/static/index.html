@@ -42,7 +42,12 @@
 
 <script type="text/babel">
 const { useState, useEffect } = React;
-const API = 'http://localhost:8080';
+const getApiBase = () => {
+  if (window.API_URL) return window.API_URL;
+  const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  return isLocalhost ? 'http://localhost:8080' : window.location.origin;
+};
+const API = getApiBase();
 
 // ── API calls ─────────────────────────────────────────────
 const api = {
