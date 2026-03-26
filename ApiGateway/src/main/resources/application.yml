@@ -1,6 +1,8 @@
 spring:
   application:
     name: api-gateway
+  config:
+    import: "optional:configserver:"
 
   cloud:
     gateway:
@@ -73,12 +75,14 @@ spring:
           predicates:
             - Path=/api/v1/payments/**
 
-
 eureka:
   client:
+    initial-instance-info-replication-interval-seconds: 30
+    registry-fetch-interval-seconds: 30
     service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
+    lease-renewal-interval-in-seconds: 30
     prefer-ip-address: true
 
 
